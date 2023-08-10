@@ -1,4 +1,4 @@
-import NavBar from 'react-bootstrap/NavBar'; 
+import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav' 
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
@@ -9,7 +9,7 @@ export default function Sidebar() {
   const {user} = useContext(UserContext)
 
   return (
-    <NavBar sticky='top' className='sidebar flex-column'>
+    <Navbar  sticky='top' className='sidebar flex-column'>
       {user.token ?
       <>
         <Nav.Item>
@@ -18,9 +18,6 @@ export default function Sidebar() {
         <Nav.Item>
             <Nav.Link as={NavLink} to={`/user-page/${user.username}`}>My Page</Nav.Link>
         </Nav.Item>
-        {/* <Nav.Item>
-          <Nav.Link as={NavLink} to='/user-page/cg'>User Page</Nav.Link>
-        </Nav.Item> */}
       </>
       :
       <>
@@ -34,9 +31,7 @@ export default function Sidebar() {
             <Nav.Link as={NavLink} to='/register'>Register</Nav.Link>
         </Nav.Item>
       </>
-      
       }
-
-    </NavBar>
+    </Navbar>
   )
 }
